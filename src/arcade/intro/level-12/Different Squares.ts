@@ -12,10 +12,10 @@ function solution(matrix: number[][]): number {
     let tmpSquare = [];
     for (let j = 1; j < countCols; j++) {
       const currentRowCol = currentRow[j];
-      const currentPrevRowCol = currentRow[j - 1];
+      const currentRowPrevCol = currentRow[j - 1];
 
       const prevRowCol = prevRow[j];
-      const prevPrevRowCol = prevRow[j - 1];
+      const prevRowPrevCol = prevRow[j - 1];
 
       if (tmpSquare.length === 4) {
         let key = tmpSquare.toString();
@@ -23,9 +23,9 @@ function solution(matrix: number[][]): number {
         tmpSquare = [];
       }
 
-      tmpSquare.push(currentPrevRowCol);
+      tmpSquare.push(currentRowPrevCol);
       tmpSquare.push(currentRowCol);
-      tmpSquare.push(prevPrevRowCol);
+      tmpSquare.push(prevRowPrevCol);
       tmpSquare.push(prevRowCol);
     }
     if (tmpSquare.length === 4) {
